@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 mat-dialog-title>{{!this.data.editMode ? "New" : "Edit"}} task</h2>
+    <mat-dialog-content>
+        <mat-form-field >
+            <mat-label>Enter the title</mat-label>
+            <input [(ngModel)]="title" matInput placeholder="Enter task title here">
+        </mat-form-field>
+
+        <div class="tasks-container">
+            <div class="task-container" *ngFor="let task of taskLoop; let i = index">
+                <mat-form-field class="task-item">
+                    <mat-label>Task {{i+1}}</mat-label>
+                    <input required [(ngModel)]="tasks[i]" matInput placeholder="Enter your task here">
+                </mat-form-field>
+                <button mat-icon-button (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
+            </div>
+        </div>
+        <button mat-button (click)="addTask()"><mat-icon>add</mat-icon>Add task</button>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button mat-button (click)="close()">Cancle</button>
+        <button mat-raised-button (click)="createTask()" [disabled]="!checkEmptyElement() || title == ''">{{!this.data.editMode ? "Create" : "Save"}}</button>
+    </mat-dialog-actions>
+</div>

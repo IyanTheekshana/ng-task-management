@@ -1,0 +1,10 @@
+.container{
+    padding: 20px 0px;
+    background-color: var(--narvik);
+    color: white !important;
+}
+
+
+mat-form-field{
+    width: 100%;
+}

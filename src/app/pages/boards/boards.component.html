@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="content-wrapper">
+        <button mat-button class="new-button" (click)="openDialog()">New Board</button>
+        @for (item of boards(); track $index) {
+            <div class="board-card">
+                <div class="title" [routerLink]="'/view-board/'+ $index">
+                    {{item.title}}
+                    <hr>
+                </div>
+               <div class="actions" >
+                <button mat-icon-button (click)="deleteBoard($index)" class="delete-button"><mat-icon>delete</mat-icon></button>
+               </div>
+            </div>
+        }@empty {
+            <div class="empty-board">
+                <p>There are no boards in the Task list.</p>
+            </div>
+        }
+    </div>
+</div>

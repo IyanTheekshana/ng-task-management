@@ -1,0 +1,32 @@
+.container{
+    padding: 20px 0px;
+    background-color: var(--narvik);
+    color: white !important;
+}
+
+hr{
+    margin:0 20px;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+mat-dialog-content{
+    overflow: hidden;
+}
+
+.tasks-container{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 300px;
+}
+
+.task-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.task-item{
+    width: 90%;
+}
